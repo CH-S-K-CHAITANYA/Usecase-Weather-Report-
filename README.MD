@@ -1,20 +1,20 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white"/>
-<img src="https://img.shields.io/badge/Delta%20Lake-003366?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" alt="Databricks" />
+<img src="https://img.shields.io/badge/Delta%20Lake-003366?style=for-the-badge" alt="Delta Lake" />
+<img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
 
-<br/><br/>
+<br/>
 
 # 🌦️ Weather Data Management (DDL & DML in Databricks)
 
 ### Implementation of SQL-based data operations using Delta Lake
 
-[![Platform](https://img.shields.io/badge/Platform-Databricks-orange)]()
-[![Storage](https://img.shields.io/badge/Storage-DeltaLake-blue)]()
-[![Language](https://img.shields.io/badge/Language-SQL-green)]()
-[![Status](https://img.shields.io/badge/Status-Completed-success)]()
+[![Platform](https://img.shields.io/badge/Platform-Databricks-orange)](#)
+[![Storage](https://img.shields.io/badge/Storage-DeltaLake-blue)](#)
+[![Language](https://img.shields.io/badge/Language-SQL-green)](#)
+[![Status](https://img.shields.io/badge/Status-Completed-success)](#)
 
 <br/>
 
@@ -24,7 +24,7 @@
 
 ## 🔍 Overview
 
-This project demonstrates the implementation of **DDL (Data Definition Language)** and **DML (Data Manipulation Language)** operations using **Databricks SQL** on a weather dataset.
+This project demonstrates the implementation of **DDL (Data Definition Language)** and **DML (Data Manipulation Language)** operations using **Databricks SQL** on a weather dataset. 
 
 The workflow includes data ingestion, schema creation, transformation, and structured query execution using Delta Lake.
 
@@ -32,60 +32,59 @@ The workflow includes data ingestion, schema creation, transformation, and struc
 
 ## 🏗️ Workflow
 
-CSV Upload → Table Creation → Schema Modification → Data Transformation → Analysis
+`CSV Upload` → `Table Creation` → `Schema Modification` → `Data Transformation` → `Analysis`
 
 ---
 
 ## 📊 Dataset
 
-* **Dataset:** `weather_data.csv`
+* **Dataset Name:** `weather_data.csv`
 * **Type:** Structured CSV
-* **Domain:** Weather Data
+* **Domain:** Meteorology / Weather Data
 
 ### Attributes:
 
-| Column         | Description         |
-| -------------- | ------------------- |
-| district       | District name       |
-| mandal         | Region              |
-| weather_date   | Date of observation |
-| rain           | Rainfall (mm)       |
-| min_temp       | Minimum temperature |
-| max_temp       | Maximum temperature |
-| min_humidity   | Minimum humidity    |
-| max_humidity   | Maximum humidity    |
-| min_wind_speed | Minimum wind speed  |
-| max_wind_speed | Maximum wind speed  |
+| Column | Description |
+| :--- | :--- |
+| **district** | District name |
+| **mandal** | Region / Sub-district |
+| **weather_date** | Date of observation |
+| **rain** | Rainfall (mm) |
+| **min_temp** | Minimum temperature (°C) |
+| **max_temp** | Maximum temperature (°C) |
+| **min_humidity** | Minimum humidity (%) |
+| **max_humidity** | Maximum humidity (%) |
+| **min_wind_speed** | Minimum wind speed (km/h) |
+| **max_wind_speed** | Maximum wind speed (km/h) |
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Databricks
-* Delta Lake
-* SQL (Databricks SQL)
-* GitHub
+* **Databricks**: Unified analytics platform.
+* **Delta Lake**: Storage layer that brings ACID transactions to Apache Spark.
+* **SQL**: Standardized language for Databricks SQL Warehouses.
+* **GitHub**: Version control and documentation.
 
 ---
 
 ## 🧱 DDL Operations
 
-* CREATE DATABASE
-* CREATE TABLE
-* DESCRIBE TABLE
-* ALTER TABLE (ADD COLUMN)
-* CREATE STAGING TABLE
+* `CREATE DATABASE` / `CREATE TABLE`
+* `DESCRIBE TABLE` (Metadata inspection)
+* `ALTER TABLE` (Adding `avg_temp` and `rain_category`)
+* `CREATE TABLE ... AS SELECT` (Staging tables)
 
 ---
 
 ## 🔄 DML Operations
 
-* SELECT
-* INSERT
-* UPDATE
-* DELETE
-* MERGE (Upsert)
-* INSERT OVERWRITE
+* `SELECT`: Data retrieval.
+* `INSERT`: Adding new weather records.
+* `UPDATE`: Calculating averages and categories.
+* `DELETE`: Data cleaning and removing outliers.
+* `MERGE`: Performing Upserts (Update + Insert).
+* `INSERT OVERWRITE`: Atomic replacement of data partitions.
 
 ---
 
@@ -93,72 +92,56 @@ CSV Upload → Table Creation → Schema Modification → Data Transformation �
 
 ```plaintext
 Weather_forcast_usecase/
-│
-├── DDL/                          # Data Definition Language queries
-│   ├── 01_use_db.sql             # Select and use database
-│   ├── 02_describe.sql           # Describe table structure
-│   ├── 03_add_avg_temp.sql       # Add column: avg_temp
-│   ├── 04_add_rain_category.sql  # Add column: rain_category
-│   ├── 05_create_stage.sql       # Create staging table
-│
-├── DML/                          # Data Manipulation Language queries
-│   ├── 01_select.sql             # View dataset
-│   ├── 02_update_avg.sql         # Calculate avg temperature
-│   ├── 03_update_rain_category.sql # Categorize rainfall
-│   ├── 04_insert.sql             # Insert new records
-│   ├── 05_delete.sql             # Remove invalid data
-│   ├── 06_insert_stage.sql       # Insert into staging table
-│   ├── 07_merge.sql              # Upsert using MERGE
-│   ├── 08_insert_overwrite.sql   # Overwrite filtered data
-│
-├── Report/                       # Project documentation
+├── DDL/                           # Data Definition Language scripts
+│   ├── 01_use_db.sql              # Database context setup
+│   ├── 02_describe.sql            # Table structure inspection
+│   ├── 03_add_avg_temp.sql        # Schema evolution: avg_temp
+│   ├── 04_add_rain_category.sql   # Schema evolution: rain_category
+│   └── 05_create_stage.sql        # Staging table definition
+├── DML/                           # Data Manipulation Language scripts
+│   ├── 01_select.sql              # Exploratory queries
+│   ├── 02_update_avg.sql          # Logic for temperature averaging
+│   ├── 03_update_rain_category.sql# Categorization logic
+│   ├── 04_insert.sql              # Manual record entry
+│   ├── 05_delete.sql              # Data scrubbing
+│   ├── 06_insert_stage.sql        # Loading staging data
+│   ├── 07_merge.sql               # Delta Lake Merge (Upsert)
+│   └── 08_insert_overwrite.sql    # Atomic table overwrites
+├── Report/                        # Project documentation
 │   └── Weather_Usecase_Report.pdf
-│
-├── data/ (optional)              # Dataset (if included)
+├── data/                          # Dataset folder
 │   └── weather_data.csv
-│
-└── README.md                     # Project overview and documentation
-```
+└── README.md                      # Project documentation
 
----
+✨ Key Features
+ACID Transactions: Leveraging Delta Lake for reliable DML operations.
 
-## ✨ Key Features
+Schema Evolution: Using ALTER TABLE to adapt to changing data requirements.
 
-* Structured implementation of DDL and DML
-* Data transformation using SQL
-* Delta Lake-based storage
-* Organized SQL file structure
-* Version control using GitHub
+Upsert Capability: Efficiently syncing staging data with production tables using MERGE.
 
----
+Clean Organization: Modular SQL scripts for better maintainability.
 
-## 🎓 Learning Outcomes
+🎓 Learning Outcomes
+Mastery of Databricks SQL syntax.
 
-* Practical use of Databricks SQL
-* Understanding of Delta Lake operations
-* Implementation of schema and data manipulation
-* Structured query organization
-* Version control practices
+Understanding the lifecycle of data in a Lakehouse architecture.
 
----
+Implementing Data Quality checks using SQL-based transformations.
 
-## ⚠️ Challenges
+Organizing cloud-based workflows into version-controlled repositories.
 
-* Handling column names with special characters
-* Schema mismatch during MERGE
-* Query export limitations in Databricks
+⚠️ Challenges
+Special Characters: Managing column names with spaces or symbols using backticks (`).
 
----
+Schema Enforcement: Resolving mismatches during the MERGE process.
 
-## 👥 Team Members
+Data Volume: Handling large-scale updates efficiently in a distributed environment.
 
-* **CH S K Chaitanya**
-  USN: 1EP23CS034
+👥 Team Members
+CH S K Chaitanya USN: 1EP23CS034
 
-* **Seethaka Rakshitha**
-  USN: 1EP23CS147
-
----
+Seethaka Rakshitha USN: 1EP23CS147
 
 <div align="center">
 

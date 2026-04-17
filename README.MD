@@ -139,11 +139,12 @@ Schema Enforcement: Resolving mismatches during the MERGE process.
 
 Data Volume: Handling large-scale updates efficiently in a distributed environment.
 ---
-|👥 Team Members |
-| :--- | :--- |
+## 👥 Team Members
+
 | Name | USN |
-| CH S K Chaitanya | 1EP23CS034 |
-| Seethaka Rakshitha | 1EP23CS147 |
+| :--- | :--- |
+| **CH S K Chaitanya** | `1EP23CS034` |
+| **Seethaka Rakshitha** | `1EP23CS147` |
 
 <div align="center">
 

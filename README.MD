@@ -90,7 +90,7 @@ The workflow includes data ingestion, schema creation, transformation, and struc
 
 ## 📁 Project Structure
 
-```plaintext
+```
 Weather_forcast_usecase/
 ├── DDL/                           # Data Definition Language scripts
 │   ├── 01_use_db.sql              # Database context setup
@@ -112,7 +112,8 @@ Weather_forcast_usecase/
 ├── data/                          # Dataset folder
 │   └── weather_data.csv
 └── README.md                      # Project documentation
-
+```
+---
 ✨ Key Features
 ACID Transactions: Leveraging Delta Lake for reliable DML operations.
 
@@ -121,7 +122,7 @@ Schema Evolution: Using ALTER TABLE to adapt to changing data requirements.
 Upsert Capability: Efficiently syncing staging data with production tables using MERGE.
 
 Clean Organization: Modular SQL scripts for better maintainability.
-
+---
 🎓 Learning Outcomes
 Mastery of Databricks SQL syntax.
 
@@ -130,14 +131,14 @@ Understanding the lifecycle of data in a Lakehouse architecture.
 Implementing Data Quality checks using SQL-based transformations.
 
 Organizing cloud-based workflows into version-controlled repositories.
-
+---
 ⚠️ Challenges
 Special Characters: Managing column names with spaces or symbols using backticks (`).
 
 Schema Enforcement: Resolving mismatches during the MERGE process.
 
 Data Volume: Handling large-scale updates efficiently in a distributed environment.
-
+---
 👥 Team Members
 CH S K Chaitanya USN: 1EP23CS034
 

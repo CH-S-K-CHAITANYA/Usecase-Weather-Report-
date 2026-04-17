@@ -144,7 +144,7 @@ Data Volume: Handling large-scale updates efficiently in a distributed environme
 | Name | USN |
 | :--- | :--- |
 | **CH S K CHAITANYA** | `1EP23CS034` |
-| **SEETHAKA RASHITHA** | `1EP23CS147` |
+| **SEETHAKA RAKSHITHA** | `1EP23CS147` |
 
 <div align="center">
 
